@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Lamp Project</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row no-gutters">
+            <div class="col-12">
+                <header>
+                    <nav class="navbar navbar-light bg-light">
+                        <a class="navbar-brand" href="#">
+                            <i class="fas fa-lightbulb"></i>
+                        </a>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#create">
+                            Create Light
+                        </button>
+
+                    </nav>
+                    <!-- Modal -->
+                    <div class="modal fade" id="create" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Create Your Light</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="create" action="."
+                                        class="d-flex flex-column align-items-center justify-content-center">
+                                        <label for="color">Your Color</label>
+                                        <input id="createColor" type="text">
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button id="createBtn" type="submit" class="btn btn-primary" data-dismiss="modal">Save
+                                        changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <div class="col-12">
+                <main>
+                    <div id="lights" class="row no-gutters">
+
+
+                    </div>
+                </main>
+            </div>
+            <div class="col-12">
+                <footer>
+
+                </footer>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+    <script id="entry-template" type="text/x-handlebars-template">
+        {{#each light}}
+        <div class="card col-2 p-3">
+            <div id="light{{id}}" class="d-flex justify-content-center"><i id="icone{{id}}" class="fas fa-lightbulb" style="font-size : 5rem; " data-color="{{color}}"></i></div>
+            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+              <h5 class="card-title">Light {{id}}</h5>
+              <button class="btn btn-primary btn btn-light {{state}}" id="btn{{id}}" ><i class="fas fa-circle"></i></button>
+              <button id="openModal{{id}}" class="btn btn-primary mt-3" data-toggle="modal" data-target="#edit{{id}}">Edit</button>
+            </div>
+        </div>
+        {{/each}}
+        <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Change Light Color</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4>Light {{id}}</h4>
+                    <form action="." class=" d-flex flex-column align-items-center justify-content-center">
+                        <label for="color">Change Color</label>
+                        <input id="colorUpdate" type="text" value="{{randomColor}}">
+                    </form>
+                </div>
+                    <div class="modal-footer">
+                        <button id="updateBtn" type="submit" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="node_modules/handlebars/dist/handlebars.js"></script>
+    <script src="script.js"></script>
+    <script src="script3.js"></script>
+
+
+
+
+
+</body>
+
+</html>

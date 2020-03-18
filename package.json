@@ -1,0 +1,17 @@
+{
+  "name": "projet_ligth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1",
+    "bootstrap": "^4.4.1",
+    "handlebars": "^4.7.3",
+    "jquery": "^3.4.1"
+  }
+}
